@@ -17,7 +17,12 @@ num_sides = int(num_sides_inp)
 side_len_inp = raw_input("Enter length of each side: ")
 side_len = int(side_len_inp)
 
-n = 720.0
+### MAM: n = 720.0 --- This is 2*360 which works for a pentagram, not for a general star
+### For a heptagram, it should have been 3*360.0; for a nonagram, it should be 4*360.0.
+### So 
+
+n = (num_sides/2)*360.0
+
 for i in range(num_sides):
     t.forward(side_len)
     t.left(n/num_sides)
